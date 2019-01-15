@@ -1,4 +1,4 @@
-FROM nexell/fileserver-base
+FROM nexelldocker/fileserver-base
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
@@ -18,6 +18,7 @@ WORKDIR /srv/releases.nexell.co.kr/www
 
 COPY releases.conf /etc/apache2/sites-available/releases.conf
 COPY header.html /srv/releases.nexell.co.kr/linaro-license-protection/templates_releases/header.html
+COPY views.py /srv/snapshots.nexell.co.kr/linaro-license-protection/license_protected_downloads/views.py
 RUN echo "Listen 8070" >> /etc/apache2/ports.conf
 
 RUN a2enmod xsendfile
