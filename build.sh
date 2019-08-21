@@ -6,5 +6,7 @@ docker build -t nexelldocker/fileserver-base .
 cd deploy_releases
 docker build -t nexelldocker/fileserver-releases .
 
+cd ..
+
 cd deploy_snapshot
 docker build -t nexelldocker/fileserver-snapshot .
